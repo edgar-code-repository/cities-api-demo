@@ -23,12 +23,17 @@ public class CityController {
         CityListResponseDTO listResponseDTO = null;
         if (type.equals("all")) {
             listResponseDTO = cityService.retrieveAllCities();
-            log.debug("[getAllCities][size: {}]", listResponseDTO.getCities().size());
+            log.debug("[getAllCities][size all: {}]", listResponseDTO.getCities().size());
+        } else if (type.equals("mostPopulated")) {
+            listResponseDTO = cityService.retrieveTenMostPopulatedCities();
+            log.debug("[getAllCities][size most populated: {}]", listResponseDTO.getCities().size());
         }
 
         log.debug("[getAllCities][END]");
         return ResponseEntity.ok(listResponseDTO);
     }
+
+
 
 
 }
