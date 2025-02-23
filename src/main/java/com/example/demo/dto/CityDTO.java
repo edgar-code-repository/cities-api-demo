@@ -1,5 +1,6 @@
 package com.example.demo.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 @Getter
@@ -9,14 +10,13 @@ import lombok.*;
 @AllArgsConstructor
 public class CityDTO {
 
-    // "city","city_ascii","lat","lng","country","iso2","iso3","admin_name","capital","population","id"
-
     private String id;
 
     private String name;
 
     private String country;
 
+    @JsonIgnore
     private String strPopulation;
 
     private Long population;
